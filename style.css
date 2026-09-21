@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111111;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    color: #eeeeee;
+    line-height: 1.6;
+}
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+a {
+    color: #9EFF5A;
+    text-decoration: underline;
+}
+a:hover {
+    color: #B6FF7A;
+}

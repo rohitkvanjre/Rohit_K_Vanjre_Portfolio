@@ -81,3 +81,11 @@ h2 {
 section {
     padding: 96px 0;
 }
+
+hero h1 {
+    font-size: 96px;
+    line-height: 1.05;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    margin: 0;
+}

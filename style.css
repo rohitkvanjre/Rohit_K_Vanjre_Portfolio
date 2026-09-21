@@ -8,7 +8,7 @@ body {
     color: #eeeeee;
     line-height: 1.6;
 }
-main {
+.container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -19,4 +19,13 @@ a {
 }
 a:hover {
     color: #B6FF7A;
+}
+
+nav ul {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
 }

@@ -50,14 +50,15 @@ a {
 }
 nav ul {
     display: flex;
-    gap: 40px;
+    gap: 24px;
     justify-content: center;
     list-style: none;
     padding: 0;
     margin: 20px 0;
+    flex-wrap: wrap;
 }
 #hero h1 {
-    font-size: 96px;
+    font-size: 48px;
     line-height: 1.05;
     font-weight: 600;
     letter-spacing: -0.025em;
@@ -66,7 +67,7 @@ nav ul {
 
 #hero p {
     color: var(--muted-foreground);
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 40px;
 }
 
@@ -82,10 +83,11 @@ section {
     padding: 96px 0;
 }
 
-hero h1 {
+@media (min-width: 768px) {
+  #hero h1 {
     font-size: 96px;
-    line-height: 1.05;
-    font-weight: 600;
-    letter-spacing: -0.025em;
-    margin: 0;
+  }
+  section {
+    padding: 120px 0;
+  }
 }

@@ -595,3 +595,24 @@ footer .container {
     padding: 32px;
   }
 }
+
+/* Desktop with a real mouse: collapse the project description until hover.
+   Touch devices keep it permanently visible, since they have no hover. */
+@media (min-width: 768px) and (hover: hover) {
+  .project-description-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 300ms ease, opacity 300ms ease;
+    opacity: 0;
+  }
+
+  .project-description-wrap > * {
+    overflow: hidden;
+  }
+
+  .project-card:hover .project-description-wrap,
+  .project-card:focus-within .project-description-wrap {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+}

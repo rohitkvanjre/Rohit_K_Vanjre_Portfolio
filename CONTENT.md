@@ -1,16 +1,18 @@
 # Site Content
 
-All the text for the portfolio. Copy from here into index.html as you
-build each section. Verify the facts marked ⚠ before publishing.
+Original copy written for this portfolio. The Vercel template is a VISUAL
+reference only — none of its text is used here.
+
+Facts are yours; the wording is fresh. Check anything marked ⚠ before
+publishing.
 
 ---
 
 ## Meta
 
 - **Page title:** Rohit K Vanjre — Software Engineer
-- **Meta description:** Portfolio of Rohit K Vanjre — full-stack developer
-  building scalable systems, from zero-touch network deployment to
-  offline-first mobile apps.
+- **Meta description:** Computer Science engineer in Bengaluru building
+  networked automation, computer-vision systems and Android apps.
 
 ---
 
@@ -18,138 +20,149 @@ build each section. Verify the facts marked ⚠ before publishing.
 
 **Name:** Rohit K Vanjre
 
-**Status pill:** Available for new projects
+**Status pill:** Open to software engineering roles
 
 **Tagline:**
-> Full-stack developer building scalable systems — from zero-touch network
-> deployment to offline-first mobile apps.
+> I build systems that take manual work off people's hands — networked
+> deployment automation, computer-vision pipelines, and Android apps
+> designed to survive a bad connection.
 
 **Buttons:**
-- Primary: `View my work` → `#projects`
+- Primary: `See my work` → `#projects`
 - Secondary: `Get in touch` → `#contact`
 
 ---
 
 ## About (01)
 
-> I'm a Computer Science Engineering student based in Bengaluru, India,
-> drawn to problems where systems thinking meets real-world impact. My work
-> spans full-stack development, Python, and Android architecture — and I
-> like engineering solutions that quietly remove hours of manual effort.
+> I'm a Computer Science engineering student in Bengaluru. Most of what
+> I've built started the same way: watching someone repeat a task a
+> computer should have handled, and deciding to fix it.
 
-> I've built a zero-touch network deployment system that cut software
-> provisioning across 180 machines from 5+ hours to a single 2-minute
-> command, and an offline-first emergency blood donation app with real-time
-> sync and privacy-first design. I care about resilience, security, and
-> clean architecture that holds up under pressure.
+> That's led me across a wider stack than I expected. Socket programming
+> and multi-threading for a deployment tool that provisions a lab in
+> minutes. Face recognition for an attendance system that replaced a
+> ten-minute roll-call. Kotlin and Firebase for an app that has to work
+> when the network doesn't. Different problems, same instinct.
 
-> I also write and publish — from a peer-reviewed journal paper on automated
-> deployment to tutorials on Python data visualization. When I'm not
-> building, I'm usually learning something adjacent to it.
+> I care about the parts that aren't visible in a demo — whether it
+> recovers when a client drops mid-transfer, whether the data stays
+> private, whether someone else can read the code in six months. I've
+> published a peer-reviewed paper on the deployment work and written
+> tutorials on Python data visualization.
 
-**Skills list:**
-Python · Java · Kotlin · C · ReactJS · Android (Jetpack Compose) ·
-JavaScript · OpenCV · Firebase · SQLite · MySQL · Pandas · NumPy · Figma
+**Skills, grouped:**
+- **Languages:** Python, Java, Kotlin, C, JavaScript
+- **Frameworks:** Flask, ReactJS, Jetpack Compose
+- **Data & CV:** OpenCV, Pandas, NumPy
+- **Storage:** Firebase, SQLite, MySQL
+- **Tools:** Git, Figma
 
 ---
 
-## Projects (02) — heading: "Selected Work"
+## Projects (02) — heading: "Projects"
 
-### 1. Smart Software Deployer
+### 1. Smart Network-Based Automated Software Deployment
 - **Year:** 2025
 - **Link:** https://github.com/rohitkvanjre/SmartSoftwareDeployer
-- **Tags:** Python, Socket Programming, Multi-threading, SQLite, TLS
+- **Tags:** Python, Sockets, Multi-threading, SQLite, TLS
 - **Description:**
-  > A resilient master–slave system for zero-touch software provisioning
-  > across LAN/Wi-Fi networks. Multi-threaded Windows-service agents cut
-  > installation time for 180 clients from 5+ hours to a single 2-minute
-  > command, with TLS encryption and SHA-256 integrity checks securing the
-  > pipeline.
+  > Installing software across a college lab meant walking to every
+  > machine. This replaces that with one command from a master node.
+  > Windows-service agents on each client handle transfers in parallel
+  > over LAN or Wi-Fi, with TLS on the wire and SHA-256 checks on arrival
+  > so a half-finished install can't pass as a good one. ⚠ Provisioning
+  > 180 machines dropped from over five hours to roughly two minutes.
 
 ### 2. IAAA — Intelligent Attendance Automation
 - **Year:** 2025
 - **Link:** https://github.com/rohitkvanjre/IAAA
 - **Demo video:** https://lnkd.in/p/gzVHXKVS
-- **Tags:** Python, OpenCV, InsightFace, Flask, SQLite
+- **Tags:** Python, Flask, OpenCV, InsightFace, SQLite
 - **Description:**
-  > A Flask web app that replaces manual roll-calls with real-time face
-  > recognition. Students enroll once via webcam capture, then an
-  > InsightFace + MTCNN pipeline marks a whole class automatically.
-  > Role-based access for Admins, HoDs, Coordinators, Mentors and Teachers
-  > mirrors a real college structure, with per-session Excel export.
+  > A Flask application that marks a full class from a single camera
+  > frame. Students enroll once by webcam; after that an MTCNN and
+  > InsightFace pipeline handles detection and matching. Permissions
+  > follow the real college hierarchy — admins, HoDs, coordinators,
+  > mentors and teachers each see only what they should — and every
+  > session exports to Excel for records.
 
 ### 3. Rakta-Seva Connect
 - **Year:** 2026
 - **Link:** ⚠ no public repo yet — use `#`
 - **Tags:** Kotlin, MVVM, Firebase, FCM, Android
 - **Description:**
-  > An emergency blood donation Android app connecting donors and requesters
-  > in real time. Built with Kotlin and MVVM, backed by Firebase Firestore
-  > and Cloud Messaging, with automated 90-day eligibility checks and
-  > privacy controls that mask donor details until a request is accepted.
+  > An Android app for emergency blood requests, where minutes matter.
+  > Requesters broadcast; nearby eligible donors get a push notification.
+  > Donor contact details stay hidden until someone accepts, and a
+  > 90-day eligibility rule is enforced automatically rather than left to
+  > the donor to remember. Built on Kotlin and MVVM over Firestore.
 
-### 4. Marketing Campaign Dashboard
+### 4. Lead Management Dashboard
 - **Year:** 2024
 - **Link:** https://www.figma.com/make/bOO7fWbgt3TokqIrVPejaU/Lead-Management-System-CRM?node-id=0-1&p=f&fullscreen=1
-- **Tags:** Figma, Prototyping, Product Design, Data Viz
+- **Tags:** Figma, Prototyping, UX, Data Viz
 - **Description:**
-  > An interactive dashboard prototype designed in Figma to visualize
-  > campaign performance metrics. Focused on clarity and usability so
-  > non-technical stakeholders can track KPIs at a glance.
+  > A CRM dashboard prototype built in Figma, designed around one
+  > question: can a non-technical manager find the number they need
+  > without being taught the interface? Interactive enough to test that
+  > properly before any code gets written.
 
 ---
 
 ## Experience (03)
 
-### MindMatrix
-- **Role:** Android App Development Intern (Gen AI)
-- **Period:** Feb 2026 — Jul 2026
+### MindMatrix — Android Development Intern (Gen AI)
+- **Period:** Feb 2026 — Jul 2026 ⚠ confirm if current
 - **Stack:** Kotlin, Firebase, MVVM
 - **Description:**
-  > Executed the full SDLC for "Rakta-Seva Connect," an emergency blood
-  > donation app built with Kotlin and MVVM. Designed the Firebase Firestore
-  > architecture, integrated Authentication and FCM, and authored the SRS
-  > with DFD and use-case modeling.
+  > Took Rakta-Seva Connect from requirements through to a working app —
+  > writing the SRS with data-flow and use-case models, designing the
+  > Firestore schema, and implementing authentication and push
+  > notifications. First time owning a full cycle rather than a feature.
 
-### Analogica Software Development Pvt. Ltd.
-- **Role:** Software Development Intern
+### Analogica Software Development Pvt. Ltd. — Software Development Intern
 - **Period:** Jun 2023 — Aug 2023
 - **Stack:** Python, DBMS, AI/ML
 - **Description:**
-  > Built foundations in DBMS and Python, including data structures and data
-  > handling. Explored statistics, AI, and machine learning through
-  > practical examples, sharpening analytical and problem-solving skills.
+  > An early, foundational internship. Worked through relational database
+  > design and Python data handling, then applied both to introductory
+  > machine learning problems. Where the habit of reaching for data
+  > before opinions started.
 
 ---
 
 ## Writing (04)
 
 ### Smart Network-Based Automated Software Deployment for Multi-System Lab Environments
-- **Category:** Publication
+- **Category:** Peer-reviewed paper
 - **Published in:** IJIRIS Journal
 - **Date:** Nov 2025
 - **Link:** https://doi.org/10.26562/ijiris.2025.v1108.25
 - **Excerpt:**
-  > A peer-reviewed paper detailing the master–slave architecture behind
-  > zero-touch software provisioning across heterogeneous lab networks.
+  > The architecture behind the deployment system, written up properly —
+  > why a master-slave model suits heterogeneous lab networks, and what
+  > broke before it didn't.
 
-### Unveiling the Magic of Matplotlib: Exploring Python's Data Visualization Library
-- **Category:** Technical Writing
+### Unveiling the Magic of Matplotlib
+- **Category:** Tutorial
 - **Published in:** Certisured
 - **Date:** Jun 2023
 - **Link:** https://certisured.com/blogs/matplotlib
 - **Excerpt:**
-  > A hands-on tutorial covering Matplotlib installation, plotting
-  > techniques, and data visualization best practices.
+  > A practical introduction to Matplotlib for people who have data and
+  > no idea how to look at it — setup through to plots worth showing
+  > someone.
 
 ---
 
 ## Contact (05)
 
 **Heading line:**
-> Have a project in mind, or just want to say hello?
+> Currently open to software engineering roles and interesting problems.
+> The fastest way to reach me is email.
 
-- **Email:** rohitvanjre@gmail.com
+- **Email:** ⚠ rohitvanjre@gmail.com (confirm — git uses vanjrerohit@gmail.com)
 - **GitHub:** https://github.com/rohitkvanjre
 - **LinkedIn:** https://linkedin.com/in/rohit-k-vanjre-742432372
 - **Location:** Bengaluru, India
@@ -158,16 +171,18 @@ JavaScript · OpenCV · Firebase · SQLite · MySQL · Pandas · NumPy · Figma
 
 ## Footer
 
-> © 2026 Rohit K Vanjre. All rights reserved.
+> © 2026 Rohit K Vanjre — built from scratch with HTML and CSS.
 
 ---
 
 ## ⚠ Verify before publishing
 
-1. **"180 machines, 5+ hours → 2 minutes"** — your strongest claim on the
-   page. Confirm the real numbers.
-2. **MindMatrix dates (Feb–Jul 2026)** — is this current or finished?
-3. **Rakta-Seva marked 2026** — shipped, or in progress?
-4. **Both GitHub links** — open them and confirm they resolve.
-5. **Email** — `rohitvanjre@gmail.com` here, but your git commits use
-   `vanjrerohit@gmail.com`. Which is the right one to publish?
+1. **"180 machines, 5+ hours → ~2 minutes"** — your strongest claim.
+   Confirm the real figures.
+2. **MindMatrix dates** — current role or finished?
+3. **Rakta-Seva 2026** — shipped or in progress? If unreleased, say so
+   rather than implying it's live.
+4. **Both GitHub links** — open them, confirm they resolve publicly.
+5. **Which email** do you actually check?
+6. **Read every line aloud.** If a sentence doesn't sound like you,
+   rewrite it. This is your voice, not mine.

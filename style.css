@@ -249,9 +249,11 @@ h2 {
 .project-grid {
     display: grid;
     gap: 24px;
+    align-items: start;
 }
 
 .project-card {
+    position: relative;
     background-color: var(--card);
     border: 1px solid var(--border);
     border-radius: 18px;
@@ -263,8 +265,38 @@ h2 {
     border-color: oklch(0.86 0.19 128 / 40%);
 }
 
+.project-link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: 18px;
+}
+
+.project-arrow {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 18px;
+    height: 18px;
+    color: var(--muted-foreground);
+    opacity: 0;
+    transition: opacity 250ms, transform 250ms, color 250ms;
+}
+
+.project-card:hover .project-arrow,
+.project-card:has(:focus-visible) .project-arrow {
+    opacity: 1;
+    color: var(--primary);
+    transform: translate(2px, -2px);
+}
+
+.project-card:has(:focus-visible) {
+    border-color: oklch(0.86 0.19 128 / 40%);
+}
+
 .project-card-top {
     display: flex;
+    padding-right: 28px;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 16px;
@@ -611,7 +643,7 @@ footer .container {
   }
 
   .project-card:hover .project-description-wrap,
-  .project-card:focus-within .project-description-wrap {
+  .project-card:has(:focus-visible) .project-description-wrap {
     grid-template-rows: 1fr;
     opacity: 1;
   }

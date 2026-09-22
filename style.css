@@ -69,10 +69,22 @@ header .container {
     background-color: var(--border);
 }
 
-#about p{
-    max-width: 65ch;
+#about p {
     color: var(--muted-foreground);
     margin: 0 0 20px 0;
+}
+
+.about-grid {
+    display: grid;
+    gap: 48px;
+}
+
+.about-skills h3 {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--muted-foreground);
+    margin: 0 0 16px 0;
 }
 nav ul {
     display: flex;
@@ -295,5 +307,8 @@ section {
   }
   .project-grid {
     grid-template-columns: 1fr 1fr;
+  }
+  .about-grid {
+    grid-template-columns: 1.5fr 1fr;
   }
 }

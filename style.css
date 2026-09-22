@@ -539,6 +539,22 @@ h2 {
     color: var(--muted-foreground);
 }
 
+footer {
+    border-top: 1px solid var(--border);
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted-foreground);
+}
+
 @media (min-width: 768px) {
   #hero h1 {
     font-size: 96px;
@@ -568,6 +584,10 @@ h2 {
   }
   .contact-pitch h3 {
     font-size: 36px;
+  }
+  footer .container {
+    flex-direction: row;
+    justify-content: space-between;
   }
   .experience-card {
     grid-template-columns: 200px 1fr;

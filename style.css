@@ -69,6 +69,11 @@ header .container {
     background-color: var(--border);
 }
 
+#about p{
+    max-width: 65ch;
+    color: var(--muted-foreground);
+    margin: 0 0 20px 0;
+}
 nav ul {
     display: flex;
     gap: 24px;
@@ -134,7 +139,7 @@ nav a:hover {
     color: var(--foreground);
     font-family: var(--font-mono);
     font-size: 13px;
-    padding: 4px 8px;
+    padding: 6px 14px;
     border-radius: 9999px;
 }
 .hero-status {

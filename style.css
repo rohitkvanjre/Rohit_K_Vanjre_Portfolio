@@ -587,7 +587,104 @@ footer .container {
     color: var(--muted-foreground);
 }
 
+
+/* Desktop with a real mouse: collapse the project description until hover.
+   Touch devices keep it permanently visible, since they have no hover. */
+@media (min-width: 768px) and (hover: hover) {
+  .project-description-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 300ms ease, opacity 300ms ease;
+    opacity: 0;
+  }
+
+  .project-description-wrap > * {
+    overflow: hidden;
+  }
+
+  .project-card:hover .project-description-wrap,
+  .project-card:has(:focus-visible) .project-description-wrap {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+}
+
+/* --- mobile navigation (default: below 768px) --- */
+
+header nav:not(.mobile-menu),
+.header-cta {
+    display: none;
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.menu-bar {
+    display: block;
+    width: 16px;
+    height: 1px;
+    margin: 0 auto;
+    background-color: var(--foreground);
+    transition: transform 200ms;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-bar:first-child {
+    transform: translateY(3px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-bar:last-child {
+    transform: translateY(-3px) rotate(-45deg);
+}
+
+.mobile-menu[hidden] {
+    display: none;
+}
+
+.mobile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 24px;
+    border-top: 1px solid var(--border);
+    background-color: oklch(0.145 0.005 260 / 95%);
+    backdrop-filter: blur(12px);
+}
+
+.mobile-menu a {
+    padding: 10px 8px;
+    border-radius: 8px;
+    font-size: 15px;
+    color: var(--muted-foreground);
+    text-decoration: none;
+}
+
+.mobile-menu a:hover {
+    background-color: var(--secondary);
+    color: var(--foreground);
+}
+
 @media (min-width: 768px) {
+  header nav:not(.mobile-menu) {
+    display: block;
+  }
+  .header-cta {
+    display: inline-block;
+  }
+  .menu-toggle,
+  .mobile-menu {
+    display: none;
+  }
   #hero h1 {
     font-size: 96px;
   }
@@ -625,26 +722,5 @@ footer .container {
     grid-template-columns: 200px 1fr;
     gap: 32px;
     padding: 32px;
-  }
-}
-
-/* Desktop with a real mouse: collapse the project description until hover.
-   Touch devices keep it permanently visible, since they have no hover. */
-@media (min-width: 768px) and (hover: hover) {
-  .project-description-wrap {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 300ms ease, opacity 300ms ease;
-    opacity: 0;
-  }
-
-  .project-description-wrap > * {
-    overflow: hidden;
-  }
-
-  .project-card:hover .project-description-wrap,
-  .project-card:has(:focus-visible) .project-description-wrap {
-    grid-template-rows: 1fr;
-    opacity: 1;
   }
 }

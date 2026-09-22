@@ -20,6 +20,10 @@ body {
     color: var(--foreground);
     line-height: 1.6;
 }
+
+section {
+    scroll-margin-top: 80px;
+}
 .container {
     max-width: 1152px;
     margin: 0 auto;
@@ -116,6 +120,23 @@ nav a:hover {
     margin-bottom: 40px;
 }
 
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+.skills li {
+    background-color: var(--secondary);
+    color: var(--foreground);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 9999px;
+}
 .hero-status {
     display: flex;
     align-items: center;

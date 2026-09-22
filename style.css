@@ -256,6 +256,11 @@ h2 {
     border: 1px solid var(--border);
     border-radius: 18px;
     padding: 24px;
+    transition: border-color 300ms;
+}
+
+.project-card:hover {
+    border-color: oklch(0.86 0.19 128 / 40%);
 }
 
 .project-card-top {
@@ -305,20 +310,6 @@ h2 {
     border-radius: 8px;
 }
 
-@media (min-width: 768px) {
-  #hero h1 {
-    font-size: 96px;
-  }
-  section {
-    padding: 128px 0;
-  }
-  .project-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .about-grid {
-    grid-template-columns: 1.5fr 1fr;
-  }
-}
 
 .header-cta {
     background-color: oklch(0.86 0.19 128 / 10%);
@@ -332,4 +323,74 @@ h2 {
 
 .header-cta:hover {
     background-color: oklch(0.86 0.19 128 / 20%);
+}
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.experience-card {
+    display: grid;
+    gap: 16px;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px;
+    transition: border-color 300ms;
+}
+
+.experience-card:hover {
+    border-color: oklch(0.86 0.19 128 / 40%);
+}
+
+.experience-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.experience-period {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted-foreground);
+}
+
+.experience-company {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.experience-detail h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary);
+    margin: 0;
+}
+
+.experience-detail p {
+    font-size: 14px;
+    color: var(--muted-foreground);
+    margin: 8px 0 0 0;
+}
+
+@media (min-width: 768px) {
+  #hero h1 {
+    font-size: 96px;
+  }
+  section {
+    padding: 128px 0;
+  }
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .about-grid {
+    grid-template-columns: 1.5fr 1fr;
+  }
+  .experience-card {
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    padding: 32px;
+  }
 }

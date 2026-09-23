@@ -1,4 +1,5 @@
 :root {
+    color-scheme: dark;
     --background: oklch(0.145 0.005 260);
     --foreground: oklch(0.96 0.003 260);
     --card: oklch(0.185 0.006 260);
@@ -12,6 +13,31 @@
 }
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Slim, dark scrollbar to match the page. color-scheme above already gives
+   Firefox and Safari a dark native bar; these rules refine it in Chrome. */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: oklch(1 0 0 / 12%);
+    border-radius: 9999px;
+    border: 2px solid var(--background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: oklch(1 0 0 / 22%);
 }
 
 body {
@@ -119,13 +145,13 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url("images/hero-bg.png");
+    background-image: url("images/hero-bg.webp");
     background-size: cover;
     background-position: right center;
     background-repeat: no-repeat;
 }
 
-#hero > *:not(.hero-overlay) {
+#hero > *:not(.hero-overlay):not(.scroll-cue) {
     position: relative;
     z-index: 1;
     width: 100%;
@@ -252,7 +278,8 @@ h2 {
         linear-gradient(
             to top,
             var(--background) 0%,
-            transparent 50%,
+            var(--background) 14%,
+            oklch(0.145 0.005 260 / 0%) 55%,
             oklch(0.145 0.005 260 / 60%) 100%
         ),
         linear-gradient(
@@ -691,6 +718,127 @@ header nav:not(.mobile-menu),
     color: var(--foreground);
 }
 
+
+/* --- scroll affordances --- */
+
+/* Bouncing cue at the bottom of the hero. */
+.scroll-cue {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    color: var(--muted-foreground);
+    transition: color 200ms;
+}
+
+.scroll-cue svg {
+    width: 20px;
+    height: 20px;
+    animation: cue-bounce 1.6s infinite;
+}
+
+.scroll-cue:hover {
+    color: var(--foreground);
+}
+
+@keyframes cue-bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-6px); }
+    60% { transform: translateY(-3px); }
+}
+
+/* Vertical progress rail pinned to the right edge. Hidden on small screens,
+   where it would crowd the content. */
+.scroll-rail {
+    position: fixed;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    z-index: 40;
+    display: none;
+    width: 8px;
+    height: 176px;
+    padding: 2px;
+    border: 1px solid oklch(1 0 0 / 10%);
+    border-radius: 9999px;
+    background-color: oklch(0 0 0 / 35%);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 24px oklch(0.86 0.19 128 / 12%);
+}
+
+.scroll-rail-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 4px;
+    height: var(--thumb-height, 20%);
+    border-radius: 9999px;
+    background: linear-gradient(to bottom, var(--primary), oklch(0.72 0.17 150));
+    box-shadow: 0 0 10px oklch(0.86 0.19 128 / 70%);
+    transform: translateY(var(--thumb-offset, 0%));
+    transition: height 150ms, transform 150ms;
+}
+
+/* Circular back-to-top button. The conic gradient draws the progress ring. */
+.back-to-top {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--muted-foreground);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms, color 200ms;
+}
+
+.back-to-top.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.back-to-top.is-visible:hover {
+    color: var(--foreground);
+}
+
+.back-to-top svg {
+    width: 20px;
+    height: 20px;
+    animation: cue-bounce-up 1.6s infinite;
+}
+
+@keyframes cue-bounce-up {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(6px); }
+    60% { transform: translateY(3px); }
+}
+
+/* Respect people who have asked their system to reduce motion. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .scroll-cue svg,
+    .back-to-top svg {
+        animation: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
+
 @media (min-width: 768px) {
   header nav:not(.mobile-menu) {
     display: block;
@@ -701,6 +849,9 @@ header nav:not(.mobile-menu),
   .menu-toggle,
   .mobile-menu {
     display: none;
+  }
+  .scroll-rail {
+    display: block;
   }
   #hero h1 {
     font-size: 96px;

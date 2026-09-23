@@ -33,3 +33,39 @@ mobileMenu.querySelectorAll('a').forEach((link) => {
     mobileMenu.hidden = true
   })
 })
+
+// Scroll progress: drives the right-hand rail and the back-to-top button.
+// JavaScript only writes numbers into CSS custom properties; CSS does the
+// drawing. That keeps all the appearance decisions in the stylesheet.
+
+const rail = document.querySelector('.scroll-rail')
+const railThumb = document.querySelector('.scroll-rail-thumb')
+const backToTop = document.querySelector('.back-to-top')
+
+function updateScrollProgress() {
+  const doc = document.documentElement
+  const scrollable = doc.scrollHeight - window.innerHeight
+  const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0
+  const clamped = Math.min(100, Math.max(0, progress))
+
+  // Thumb height mirrors how much of the page fits on screen at once.
+  const ratio = (window.innerHeight / doc.scrollHeight) * 100
+  const thumbHeight = Math.max(12, Math.min(42, ratio))
+
+  railThumb.style.setProperty('--thumb-height', thumbHeight + '%')
+  railThumb.style.setProperty(
+    '--thumb-offset',
+    (clamped / 100) * ((100 - thumbHeight) / thumbHeight) * 100 + '%'
+  )
+  rail.setAttribute('aria-valuenow', String(Math.round(clamped)))
+
+  backToTop.classList.toggle('is-visible', window.scrollY > 360)
+}
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+})
+
+updateScrollProgress()
+window.addEventListener('scroll', updateScrollProgress, { passive: true })
+window.addEventListener('resize', updateScrollProgress)

@@ -194,3 +194,4 @@ const counterObserver = new IntersectionObserver(
 )
 
 counters.forEach((el) => counterObserver.observe(el))
+

@@ -1,0 +1,23 @@
+{
+  "name": "primary",
+  "version": "1.0.0",
+  "description": "My personal portfolio site. Hand-written HTML, CSS and JavaScript — no frameworks, no build step, no dependencies.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rohitkvanjre/Rohit_K_Vanjre_Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rohitkvanjre/Rohit_K_Vanjre_Portfolio/issues"
+  },
+  "homepage": "https://github.com/rohitkvanjre/Rohit_K_Vanjre_Portfolio#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}

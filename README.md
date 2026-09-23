@@ -3,7 +3,7 @@
 My personal portfolio site. Hand-written HTML, CSS and JavaScript —
 no frameworks, no build step, no dependencies.
 
-**Live:** https://YOUR-VERCEL-URL
+**Live:** https://rohit-k-vanjre-portfolio.vercel.app
 
 ![Portfolio homepage](images/og-image.png)
 

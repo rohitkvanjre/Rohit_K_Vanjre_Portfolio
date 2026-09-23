@@ -51,9 +51,10 @@ section:not(#hero) {
     padding-top: 48px;
 }
 .container {
-    max-width: 1152px;
+    /* Grows with the viewport on large displays, never past 1600px. */
+    max-width: clamp(1152px, 78vw, 1600px);
     margin: 0 auto;
-    padding: 24px;
+    padding: clamp(24px, 2vw, 40px);
 }
 a {
     color: var(--primary);
@@ -104,6 +105,7 @@ header .container {
 
 .about-bio p {
     color: var(--muted-foreground);
+    font-size: clamp(16px, 1.1vw, 21px);
     margin: 0 0 20px 0;
 }
 
@@ -158,19 +160,19 @@ nav a:hover {
 
 
 #hero h1 {
-    font-size: 48px;
+    font-size: clamp(48px, 6.5vw, 132px);
     line-height: 1.05;
     font-weight: 600;
     letter-spacing: -0.025em;
     margin: 0;
-    max-width: 896px;
+    max-width: clamp(896px, 62vw, 1300px);
 }
 
 #hero p {
     color: var(--muted-foreground);
-    font-size: 20px;
+    font-size: clamp(18px, 1.35vw, 26px);
     margin-bottom: 0;
-    max-width: 576px;
+    max-width: clamp(576px, 42vw, 820px);
 }
 
 .skills {
@@ -263,7 +265,7 @@ nav a:hover {
 }
 
 h2 {
-    font-size: 36px;
+    font-size: clamp(30px, 2.6vw, 52px);
     font-weight: 600;
     letter-spacing: -0.025em;
     line-height: 1.2;
@@ -347,7 +349,7 @@ h2 {
 }
 
 .project-card h3 {
-    font-size: 20px;
+    font-size: clamp(20px, 1.35vw, 26px);
     font-weight: 500;
     letter-spacing: -0.025em;
     line-height: 1.3;
@@ -361,7 +363,7 @@ h2 {
 }
 
 .project-description {
-    font-size: 14px;
+    font-size: clamp(14px, 1vw, 18px);
     color: var(--muted-foreground);
     line-height: 1.6;
     margin: 12px 0 0 0;
@@ -433,7 +435,7 @@ h2 {
 }
 
 .experience-company {
-    font-size: 18px;
+    font-size: clamp(18px, 1.25vw, 24px);
     font-weight: 500;
 }
 
@@ -445,7 +447,7 @@ h2 {
 }
 
 .experience-detail p {
-    font-size: 14px;
+    font-size: clamp(14px, 1vw, 18px);
     color: var(--muted-foreground);
     margin: 8px 0 0 0;
 }
@@ -485,7 +487,7 @@ h2 {
 }
 
 .writing-body h3 {
-    font-size: 18px;
+    font-size: clamp(18px, 1.3vw, 25px);
     font-weight: 500;
     letter-spacing: -0.025em;
     margin: 0;
@@ -533,7 +535,7 @@ h2 {
 }
 
 .contact-pitch h3 {
-    font-size: 30px;
+    font-size: clamp(26px, 2.2vw, 44px);
     font-weight: 600;
     letter-spacing: -0.025em;
     line-height: 1.2;
@@ -541,7 +543,7 @@ h2 {
 }
 
 .contact-pitch p {
-    font-size: 18px;
+    font-size: clamp(17px, 1.2vw, 22px);
     color: var(--muted-foreground);
     max-width: 440px;
     margin: 16px 0 0 0;
@@ -883,7 +885,7 @@ nav a.is-active {
     display: block;
     width: 100%;
     height: auto;
-    max-width: 220px;
+    max-width: clamp(220px, 15vw, 320px);
     aspect-ratio: 1 / 1;
     object-fit: contain;
     object-position: center bottom;
@@ -923,9 +925,6 @@ button.contact-link {
   .scroll-rail {
     display: block;
   }
-  #hero h1 {
-    font-size: 96px;
-  }
   section {
     padding: 128px 0;
   }
@@ -936,7 +935,7 @@ button.contact-link {
     grid-template-columns: 1fr 1fr;
   }
   .about-grid {
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: clamp(260px, 18vw, 360px) 1fr;
   }
   .about-skills {
     grid-column: 2;

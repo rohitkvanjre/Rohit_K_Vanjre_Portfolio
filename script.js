@@ -69,3 +69,128 @@ backToTop.addEventListener('click', () => {
 updateScrollProgress()
 window.addEventListener('scroll', updateScrollProgress, { passive: true })
 window.addEventListener('resize', updateScrollProgress)
+
+// --- 1. Scroll reveal ---------------------------------------------------
+// IntersectionObserver tells us when an element enters the viewport. It is
+// far cheaper than checking positions on every scroll event, because the
+// browser does the work natively instead of running our code 60 times a
+// second.
+
+const revealTargets = document.querySelectorAll('[data-reveal]')
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed')
+        // Once revealed, stop watching it — the animation only plays once.
+        revealObserver.unobserve(entry.target)
+      }
+    })
+  },
+  { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+)
+
+revealTargets.forEach((el) => revealObserver.observe(el))
+
+// --- 2. Active nav link -------------------------------------------------
+// Highlight the nav link matching whichever section is currently on screen.
+
+const sections = document.querySelectorAll('main section[id]')
+const navLinks = document.querySelectorAll('header nav a[href^="#"]')
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return
+      const id = entry.target.id
+      navLinks.forEach((link) => {
+        link.classList.toggle('is-active', link.getAttribute('href') === '#' + id)
+      })
+    })
+  },
+  // Only count a section as "current" when it crosses the middle of the screen.
+  { rootMargin: '-45% 0px -45% 0px' }
+)
+
+sections.forEach((section) => sectionObserver.observe(section))
+
+// --- 3. Copy email ------------------------------------------------------
+// The email row in Contact copies the address instead of opening a mail app.
+
+const copyButton = document.querySelector('.copy-email')
+
+if (copyButton) {
+  const label = copyButton.querySelector('.copy-email-text')
+  const address = copyButton.dataset.email
+
+  copyButton.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(address)
+      label.textContent = 'Copied to clipboard'
+      copyButton.classList.add('is-copied')
+      setTimeout(() => {
+        label.textContent = address
+        copyButton.classList.remove('is-copied')
+      }, 2000)
+    } catch {
+      // Clipboard access can be refused on older browsers or insecure origins.
+      label.textContent = 'Press Ctrl+C to copy'
+    }
+  })
+}
+
+
+// --- 4. Project filtering -----------------------------------------------
+
+const filterChips = document.querySelectorAll('.filter-chip')
+const projectCards = document.querySelectorAll('.project-card')
+
+filterChips.forEach((chip) => {
+  chip.addEventListener('click', () => {
+    const filter = chip.dataset.filter
+
+    filterChips.forEach((c) => c.classList.toggle('is-active', c === chip))
+
+    projectCards.forEach((card) => {
+      const matches = filter === 'all' || card.dataset.category === filter
+      card.classList.toggle('is-filtered-out', !matches)
+    })
+  })
+})
+
+// --- 5. Animated counters -----------------------------------------------
+// Count from 0 up to the target when the stat scrolls into view.
+
+const counters = document.querySelectorAll('[data-count-to]')
+
+function runCounter(el) {
+  const target = Number(el.dataset.countTo)
+  const suffix = el.dataset.suffix || ''
+  const duration = 1200
+  const start = performance.now()
+
+  function tick(now) {
+    const elapsed = now - start
+    const progress = Math.min(1, elapsed / duration)
+    // easeOutCubic — fast at first, settling gently at the end.
+    const eased = 1 - Math.pow(1 - progress, 3)
+    el.textContent = Math.round(target * eased) + suffix
+    if (progress < 1) requestAnimationFrame(tick)
+  }
+
+  requestAnimationFrame(tick)
+}
+
+const counterObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return
+      runCounter(entry.target)
+      counterObserver.unobserve(entry.target)
+    })
+  },
+  { threshold: 0.5 }
+)
+
+counters.forEach((el) => counterObserver.observe(el))

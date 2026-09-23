@@ -60,16 +60,31 @@
         </section>
         <section id="about">
             <div class="container">
-                <div class="section-heading">
+                <div class="section-heading" data-reveal>
                     <span class="section-index">01</span>
                     <h2>About</h2>
                     <span class="section-line"></span>
                 </div>
-                <div class="about-grid">
+                <div class="about-grid" data-reveal>
                     <div class="about-bio">
                         <p>Hello! I'm Rohit K Vanjre, a Computer Science Engineering student based in Bengaluru, India, drawn to problems where systems thinking meets real-world impact. My work spans full-stack development, Python, and Android architecture — and I like engineering solutions that quietly remove hours of manual effort.</p>
                         <p>I've built a zero-touch network deployment system that cut software provisioning across 180 machines from 5+ hours to a single 2-minute command, and an offline-first emergency blood donation app with real-time sync and privacy-first design. I care about resilience, security, and clean architecture that holds up under pressure.</p>
                         <p>I also write and publish — from a peer-reviewed journal paper on automated deployment to tutorials on Python data visualization. When I'm not building, I'm usually learning something adjacent to it.</p>
+                    </div>
+
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-value" data-count-to="180">0</span>
+                            <span class="stat-label">machines provisioned in one command</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" data-count-to="2" data-suffix=" min">0</span>
+                            <span class="stat-label">deploy time, down from five hours</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" data-count-to="2">0</span>
+                            <span class="stat-label">pieces published, one peer-reviewed</span>
+                        </div>
                     </div>
 
                     <div class="about-skills">
@@ -92,13 +107,20 @@
         </section>
         <section id="projects">
             <div class="container">
-                <div class="section-heading">
+                <div class="section-heading" data-reveal>
                     <span class="section-index">02</span>
                     <h2>Projects</h2>
                     <span class="section-line"></span>
                 </div>
+                <div class="project-filters" role="group" aria-label="Filter projects by category">
+                    <button type="button" class="filter-chip is-active" data-filter="all">All</button>
+                    <button type="button" class="filter-chip" data-filter="Automation">Automation</button>
+                    <button type="button" class="filter-chip" data-filter="Computer Vision">Computer Vision</button>
+                    <button type="button" class="filter-chip" data-filter="Mobile">Mobile</button>
+                    <button type="button" class="filter-chip" data-filter="Design">Design</button>
+                </div>
                 <div class="project-grid">
-                    <div class="project-card">
+                    <div class="project-card" data-reveal data-category="Automation">
                         <a class="project-link" href="https://github.com/rohitkvanjre/SmartSoftwareDeployer" target="_blank" aria-label="Smart Network-Based Automated Software Deployment on GitHub"></a>
                         <svg class="project-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
                         <div class="project-card-top">
@@ -116,7 +138,7 @@
                             <li>TLS</li>
                         </ul>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" data-reveal data-category="Computer Vision">
                         <a class="project-link" href="https://github.com/rohitkvanjre/IAAA" target="_blank" aria-label="IAAA on GitHub"></a>
                         <svg class="project-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
                         <div class="project-card-top">
@@ -134,7 +156,7 @@
                             <li>SQLite</li>
                         </ul>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" data-reveal data-category="Mobile">
                         <div class="project-card-top">
                             <h3>Rakta-Seva Connect — Emergency Blood Donation App</h3>
                             <span class="project-year">2026</span>
@@ -149,7 +171,7 @@
                             <li>Android</li>
                         </ul>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" data-reveal data-category="Design">
                         <a class="project-link" href="https://shadow-copper-54715608.figma.site" target="_blank" aria-label="Marketing Campaign Dashboard prototype in Figma"></a>
                         <svg class="project-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
                     <div class="project-card-top">
@@ -171,13 +193,13 @@
         </section>
         <section id="experience">
             <div class="container">
-                <div class="section-heading">
+                <div class="section-heading" data-reveal>
                     <span class="section-index">03</span>
                     <h2>Experience</h2>
                     <span class="section-line"></span>
                 </div>
                 <div class="experience-list">
-                    <div class="experience-card">
+                    <div class="experience-card" data-reveal>
                         <div class="experience-meta">
                             <span class="experience-period">Feb 2026 — Jul 2026</span>
                             <span class="experience-company">MindMatrix</span>
@@ -192,7 +214,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="experience-card">
+                    <div class="experience-card" data-reveal>
                         <div class="experience-meta">
                             <span class="experience-period">Jun 2023 — Aug 2023</span>
                             <span class="experience-company">Analogica Software Development Pvt. Ltd.</span>
@@ -212,13 +234,13 @@
         </section>
         <section id="writing">
             <div class="container">
-                <div class="section-heading">
+                <div class="section-heading" data-reveal>
                     <span class="section-index">04</span>
                     <h2>Writing</h2>
                     <span class="section-line"></span>
                 </div>
                 <div class="writing-list">
-                    <a class="writing-item" href="https://doi.org/10.26562/ijiris.2025.v1108.25" target="_blank">
+                    <a class="writing-item" data-reveal href="https://doi.org/10.26562/ijiris.2025.v1108.25" target="_blank">
                         <div class="writing-meta">
                             <span class="writing-date">Nov 2025</span>
                             <span class="writing-category">Publication</span>
@@ -232,7 +254,7 @@
                             <svg class="writing-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
                         </span>
                     </a>
-                    <a class="writing-item" href="https://certisured.com/blogs/matplotlib" target="_blank">
+                    <a class="writing-item" data-reveal href="https://certisured.com/blogs/matplotlib" target="_blank">
                         <div class="writing-meta">
                             <span class="writing-date">Jun 2023</span>
                             <span class="writing-category">Blog</span>
@@ -251,19 +273,15 @@
         </section>
         <section id="contact">
             <div class="container">
-                <div class="section-heading">
+                <div class="section-heading" data-reveal>
                     <span class="section-index">05</span>
                     <h2>Contact</h2>
                     <span class="section-line"></span>
                 </div>
-                <div class="contact-grid">
+                <div class="contact-grid" data-reveal>
                     <div class="contact-pitch">
                         <h3>Open to roles and interesting problems.</h3>
                         <p>Whether it's a job, a collaboration, or a question about something I've built — email is the fastest way to reach me.</p>
-                        <a class="btn btn-primary contact-email" href="mailto:rohitvanjre@gmail.com">
-                            <svg class="contact-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                            rohitvanjre@gmail.com
-                        </a>
                     </div>
 
                     <div class="contact-links">
@@ -281,13 +299,13 @@
                             </span>
                             <span class="contact-handle">/in/rohit-k-vanjre</span>
                         </a>
-                        <a class="contact-link" href="mailto:rohitvanjre@gmail.com">
+                        <button type="button" class="contact-link copy-email" data-email="rohitvanjre@gmail.com">
                             <span class="contact-link-left">
                                 <svg class="contact-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                                 <span class="contact-label">Email</span>
                             </span>
-                            <span class="contact-handle">rohitvanjre@gmail.com</span>
-                        </a>
+                            <span class="contact-handle copy-email-text">rohitvanjre@gmail.com</span>
+                        </button>
                     </div>
                 </div>
             </div>

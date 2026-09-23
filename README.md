@@ -9,17 +9,6 @@ no frameworks, no build step, no dependencies.
 
 ---
 
-## Why it's built this way
-
-I could have shipped this with Next.js in an afternoon. I built it by hand
-instead, because I wanted to actually understand the layout, the cascade and
-the DOM rather than the abstraction sitting on top of them.
-
-Everything here is `index.html`, `style.css` and `script.js`. Clone it and
-open the HTML file — that's the whole setup.
-
----
-
 ## Features
 
 - **Fluid across every screen size** — `clamp()` scales type and layout
@@ -49,52 +38,6 @@ open the HTML file — that's the whole setup.
 | Analytics | Microsoft Clarity |
 
 No npm, no bundler, no CSS framework.
-
----
-
-## Structure
-
-```
-.
-├── index.html      # every section, one page
-├── style.css       # design tokens, layout, responsive rules
-├── script.js       # header state, menu, scroll effects, filtering
-├── images/         # hero background and profile photo, all WebP
-└── files/          # résumé
-```
-
----
-
-## Running it locally
-
-```bash
-git clone https://github.com/rohitkvanjre/Rohit_K_Vanjre_Portfolio.git
-cd Rohit_K_Vanjre_Portfolio
-```
-
-Open `index.html` in a browser. That's it.
-
-For live reloading while editing, the VS Code **Live Server** extension works
-well.
-
----
-
-## A few implementation notes
-
-**Dark scrollbar and native UI** — `color-scheme: dark` on `:root` tells the
-browser to render scrollbars, form controls and selection highlights to match
-the page, in one line.
-
-**Animating to an unknown height** — the project descriptions expand on hover
-by transitioning `grid-template-rows` from `0fr` to `1fr`, which animates to
-the content's real height. `max-height` guesswork isn't needed.
-
-**Hover only where hover exists** — collapse-on-hover is wrapped in
-`@media (hover: hover)`, so touch devices show the content permanently
-instead of hiding it behind an interaction they cannot perform.
-
-**Images** — the hero background went from a 1.2 MB PNG to a 92 KB WebP, a
-93% reduction with no visible difference.
 
 ---
 

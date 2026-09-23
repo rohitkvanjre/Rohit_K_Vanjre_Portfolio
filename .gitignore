@@ -1,2 +1,5 @@
-Videos/
 node_modules/
+
+# Working reference docs, not part of the site
+CONTENT.md
+DESIGN-SPEC.md

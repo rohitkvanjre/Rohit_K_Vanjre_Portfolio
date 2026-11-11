@@ -18,7 +18,6 @@ no frameworks, no build step, no dependencies.
 - **Active nav highlighting** that tracks the section you are reading
 - **Scroll-aware header** — transparent over the hero, frosted once you scroll
 - **Custom scroll progress rail** and a back-to-top control
-- **Category filtering** on the project grid
 - **Accessible mobile menu** driven by `aria-expanded`
 - **Click-to-copy** email in the contact section
 - **Respects `prefers-reduced-motion`** — all animation is disabled for

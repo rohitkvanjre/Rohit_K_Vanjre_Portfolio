@@ -140,26 +140,7 @@ if (copyButton) {
   })
 }
 
-
-// --- 4. Project filtering -----------------------------------------------
-
-const filterChips = document.querySelectorAll('.filter-chip')
-const projectCards = document.querySelectorAll('.project-card')
-
-filterChips.forEach((chip) => {
-  chip.addEventListener('click', () => {
-    const filter = chip.dataset.filter
-
-    filterChips.forEach((c) => c.classList.toggle('is-active', c === chip))
-
-    projectCards.forEach((card) => {
-      const matches = filter === 'all' || card.dataset.category === filter
-      card.classList.toggle('is-filtered-out', !matches)
-    })
-  })
-})
-
-// --- 5. Animated counters -----------------------------------------------
+// --- 4. Animated counters -----------------------------------------------
 // Count from 0 up to the target when the stat scrolls into view.
 
 const counters = document.querySelectorAll('[data-count-to]')

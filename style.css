@@ -387,6 +387,23 @@ h2 {
     border-radius: 8px;
 }
 
+/* sits above the card's overlay link so it gets its own click */
+.project-download {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    margin-top: 16px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.project-download:hover,
+.project-download:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
 
 .header-cta {
     background-color: oklch(0.86 0.19 128 / 10%);
@@ -450,6 +467,21 @@ h2 {
     font-size: clamp(14px, 1.1vw, 21px);
     color: var(--muted-foreground);
     margin: 8px 0 0 0;
+}
+
+.experience-points {
+    margin: 12px 0 0 0;
+    padding-left: 18px;
+    font-size: clamp(14px, 1.1vw, 21px);
+    color: var(--muted-foreground);
+}
+
+.experience-points li + li {
+    margin-top: 6px;
+}
+
+.experience-points li::marker {
+    color: var(--primary);
 }
 
 .writing-list {
@@ -846,41 +878,6 @@ nav a.is-active {
     color: var(--primary);
 }
 
-/* --- project filters --- */
-
-.project-filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-}
-
-.filter-chip {
-    padding: 6px 14px;
-    border: 1px solid var(--border);
-    border-radius: 9999px;
-    background: none;
-    cursor: pointer;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--muted-foreground);
-    transition: color 200ms, border-color 200ms, background-color 200ms;
-}
-
-.filter-chip:hover {
-    color: var(--foreground);
-}
-
-.filter-chip.is-active {
-    color: var(--primary);
-    border-color: oklch(0.86 0.19 128 / 40%);
-    background-color: oklch(0.86 0.19 128 / 10%);
-}
-
-.project-card.is-filtered-out {
-    display: none;
-}
-
 .about-photo img {
     display: block;
     width: 100%;
@@ -988,14 +985,6 @@ button.contact-link {
     *::before,
     *::after {
         transition-duration: 0.01ms !important;
-    }
-}
-
-/* Very wide screens: three project columns, and a shorter hero so the
-   viewport is not mostly empty space on an ultrawide display. */
-@media (min-width: 1800px) {
-    .project-grid {
-        grid-template-columns: repeat(3, 1fr);
     }
 }
 

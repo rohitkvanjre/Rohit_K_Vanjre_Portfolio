@@ -19,6 +19,9 @@ no frameworks, no build step, no dependencies.
 - **Scroll-aware header** — transparent over the hero, frosted once you scroll
 - **Custom scroll progress rail** and a back-to-top control
 - **Accessible mobile menu** driven by `aria-expanded`
+- **Expanding project cards** — details open on hover, with links to
+  source code and release downloads
+- **One-click résumé download** from the hero
 - **Click-to-copy** email in the contact section
 - **Respects `prefers-reduced-motion`** — all animation is disabled for
   visitors who ask for it
@@ -34,7 +37,7 @@ no frameworks, no build step, no dependencies.
 | Behaviour | Vanilla JavaScript — `IntersectionObserver`, Clipboard API |
 | Fonts | Geist and Geist Mono |
 | Hosting | Vercel, deployed from `main` on every push |
-| Analytics | Microsoft Clarity |
+| Analytics | Google Analytics 4, Vercel Web Analytics, Microsoft Clarity |
 
 No npm, no bundler, no CSS framework.
 
@@ -45,3 +48,4 @@ No npm, no bundler, no CSS framework.
 - **Email:** rohitvanjre@gmail.com
 - **LinkedIn:** [rohit-k-vanjre](https://linkedin.com/in/rohit-k-vanjre-742432372)
 - **GitHub:** [@rohitkvanjre](https://github.com/rohitkvanjre)
+- **Location:** Anekal, Bengaluru
